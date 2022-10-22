@@ -142,10 +142,9 @@ int main() {
     copy(tour.begin(), tour.end(), back_inserter(bestTour));
 
     // start step
-    while (s.elapsed_time() < 1980) { // can push to 1980
-        twoExchange(tour); // remove this for more time...
-        if (!twoExchange(tour)) { // best tour
-            if (minDist < bestDist) { // can be <=
+    while (s.elapsed_time() < 1980) {
+        if (!twoExchange(tour)) {
+            if (minDist < bestDist) {
                 bestTour.assign(tour.begin(), tour.end()); 
                 bestDist = minDist;
             }
